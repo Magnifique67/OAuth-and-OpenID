@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             exampleField: document.getElementById('exampleInput').value
         };
 
-        fetch('/api/submit', {
+        fetch('/submit', {
             method: 'POST',
             headers: {
                 [csrfHeader]: csrfToken,

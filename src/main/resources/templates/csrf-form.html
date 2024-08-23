@@ -1,18 +1,12 @@
-
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-    <title>CSRF Protection with AJAX</title>
-    <!-- CSRF Meta Tags -->
-    <meta name="_csrf" th:content="${_csrf.token}"/>
-    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
-    <!-- Link to External JavaScript -->
-    <script src="/js/csrf.js" defer></script>
+    <title>CSRF Test</title>
 </head>
 <body>
-<div th:if="${message}" th:text="${message}" style="color: green;"></div>
-<form id="exampleForm">
-    <input type="text" id="exampleInput" placeholder="Enter something"/>
+<form action="/submit" method="post">
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+    <input type="text" name="testField" placeholder="Test Field">
     <button type="submit">Submit</button>
 </form>
 </body>
